@@ -14,7 +14,7 @@
     --orange: #e78200;
 
     /** Utils **/
-    --small-box-shadow: 1px-1px 7px 0 #00000061;
+    --small-box-shadow: 1px 1px 7px 0 #00000061;
     --border: 1px solid #00000030;
 }
 
@@ -41,13 +41,26 @@ main {
 
 footer {
     flex-shrink: 0;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
 }
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem
+}
+
 
 /* Header */ 
 
 .navbar {
     background-color: white !important;
-    box-shadow: var(--small-box-shadow);
+    box-shadow: var(--small-box-shadow) !important;
+    height: 160px !important;
 }
 
 a.nav-link {
@@ -55,7 +68,8 @@ a.nav-link {
 }
 
 img.logo {
-    width: 10rem
+    width: 10rem;
+    overflow: hidden
 }
 
 .bg-body-tertiary {
