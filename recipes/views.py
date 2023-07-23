@@ -8,6 +8,8 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
 
+from django.db.models import Q
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Recipe
@@ -21,6 +23,18 @@ class Recipes(ListView):
     model = Recipe
     context_object_name = "recipes"
 
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            recipes = self.model.objects.filter(
+                Q(title__icontains=query) | 
+                Q(description__icontains=query) |
+                Q(instructions__icontains=query) |
+                Q(cuisine_types__icontains=query)
+            )
+        else:
+            recipes = self.model.objects.all()
+        return recipes
 
 class RecipeDetail(DetailView):
     """View as a single recipe"""
