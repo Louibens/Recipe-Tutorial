@@ -30,8 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-louibens-recipetutorial-czw6rsfznvv.ws-eu101.gitpod.io','localhost']
-CSRF_TRUSTED_ORIGINS = ['https://8000-louibens-recipetutorial-czw6rsfznvv.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['8000-louibens-recipetutorial-czw6rsfznvv.ws-eu102.gitpod.io', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://8000-louibens-recipetutorial-czw6rsfznvv.ws-eu102.gitpod.io']
 
 # Application definition
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Apps
     'home',
+    'recipes',
 
     # Other
     'crispy_forms',
